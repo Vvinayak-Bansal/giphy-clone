@@ -1,0 +1,104 @@
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.header img{
+    width: 150px;
+}
+
+.menu{
+    display: flex;
+    flex: 1;/*take as much as space you can take menu */
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.button{
+    background-color: #6d63ff;
+    width: 75px;
+    height: 35px;
+    display: flex;
+    justify-content: center;/* aligning the element aroun axis of component*/
+    align-items: center;
+    margin-right: 3px;
+}
+
+.profile
+{
+    background-color: #4a494a;
+    display: flex;
+    width: 150px;
+    justify-content: space-between; /* gives equal space between content*/
+    align-items: center;
+}
+
+.profile img{
+    width: 35px;
+}
+
+.button-wrapper{
+    height: 35px;
+    align-items: flex-start;
+    display: flex;
+    margin-right: 10px;
+}
+
+/*gradient below menu items*/
+.reactions {
+    background: linear-gradient(90deg, #43e0ff 0%, #456ffc 75%);
+  }
+  
+  .entertainment {
+    background: linear-gradient(90deg, #456ffc 0%, #7145fc 69%);
+  }
+  
+  .sports {
+    background: linear-gradient(90deg, #7145fc 0%, #a945fc 71%, #c445fc 92%);
+  }
+  
+  .stickers {
+    background: linear-gradient(90deg, #c445fc 0%, #ef45fc 75%);
+  }
+  
+  .artists {
+    background: linear-gradient(90deg, #ef45fc 0%, #fc45c5 62%);
+  }
+  
+  .moreverticon {
+    background: linear-gradient(90deg, #fc45c5 0%, #fc4584 76%);
+  }
+
+  .menu-button{
+    background-color: #121212;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+/*used for hover on menu buttons*/
+  .hover-reactions:hover {
+    background: linear-gradient(90deg, #43e0ff 0%, #456ffc 75%);
+  }
+  
+  .hover-entertainment:hover {
+    background: linear-gradient(90deg, #456ffc 0%, #7145fc 69%);
+  }
+  
+  .hover-sports:hover {
+    background: linear-gradient(90deg, #7145fc 0%, #a945fc 71%, #c445fc 92%);
+  }
+  
+  .hover-stickers:hover {
+    background: linear-gradient(90deg, #c445fc 0%, #ef45fc 75%);
+  }
+  
+  .hover-artists:hover {
+    background: linear-gradient(90deg, #ef45fc 0%, #fc45c5 62%);
+  }
+  
+  .hover-moreverticon:hover {
+    background: linear-gradient(90deg, #fc45c5 0%, #fc4584 76%);
+  }
