@@ -6,11 +6,13 @@ import TrendingGiphy from './TrendingGiphy.js';
 import giphyArtists from '../Artists'
 import ArtistGiphy from './ArtistGiphy';
 import ClipsGiphySection from './ClipsGiphySection';
+import StoriesGiphySection from './StoriesGiphySection';
 
 const Media = () => {
     const [trending, setTrending] = useState([]); //usestate is used to update the element when the page id reloaded
     const [artists, setArtists] = useState([]);
     const [clips, setClips] = useState([]);
+    const [stories, setStories] = useState([]);
 
 const randomizeData = (content) => {
     return content.data.sort(()=>Math.random()-0.5);
@@ -45,9 +47,10 @@ useEffect(() => {
     getTrendingGiphys();
     getArtists();
     getSearchedGiphys("coffee",setClips);
+    getSearchedGiphys("pose",setStories);
 }, []);
 
-console.log(clips, 'what is in the clips!');
+/*console.log(stories, 'what is in the stories!');*/
 
   return (
     <div className='media'>
@@ -89,14 +92,14 @@ console.log(clips, 'what is in the clips!');
                 <ClipsGiphySection giphysArray = {clips}></ClipsGiphySection>
             </div>
         </div>       
-
+                    <br></br>
         <div className='row'>
             <div className='row-header'>
                 <img src='/images/Stories.svg' alt='Stories'></img>
                 <h1>Stories</h1> 
             </div>
             <div className='stories-container'>
-                <p>Content</p>
+                <StoriesGiphySection giphysArray = {stories}/>
             </div>
         </div>
 
