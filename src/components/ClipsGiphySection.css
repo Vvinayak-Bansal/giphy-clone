@@ -1,0 +1,45 @@
+.clips-grid{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+}
+
+.first-column{
+    
+    height: 400px;
+    width: 750px;
+}
+
+.first-column img{
+    
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.second-column{
+    
+    width: 350px;
+    height: 400px;
+}
+
+.second-column img{
+    
+    width: 340px;
+    height: 173px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.text img{
+    width: 20px;
+    height: 30px;
+    margin-right: 10px;
+}

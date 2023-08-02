@@ -5,10 +5,12 @@ import { fetchSearchedGiphys, fetchTrendingGiphys } from '../Api/giphyApi';
 import TrendingGiphy from './TrendingGiphy.js';
 import giphyArtists from '../Artists'
 import ArtistGiphy from './ArtistGiphy';
+import ClipsGiphySection from './ClipsGiphySection';
 
 const Media = () => {
-    const [trending, setTrending] = useState([]);
+    const [trending, setTrending] = useState([]); //usestate is used to update the element when the page id reloaded
     const [artists, setArtists] = useState([]);
+    const [clips, setClips] = useState([]);
 
 const randomizeData = (content) => {
     return content.data.sort(()=>Math.random()-0.5);
@@ -32,14 +34,20 @@ const getArtists = async () =>{
     setArtists(artists.flat());
 }
 
+//for clips
+const getSearchedGiphys = async (query, setState) => {
+    const searched = await fetchSearchedGiphys(query);
+    setState(randomizeData(searched.data));
+};
 
 
 useEffect(() => {
     getTrendingGiphys();
     getArtists();
+    getSearchedGiphys("coffee",setClips);
 }, []);
 
-console.log(artists, 'what is in the artsists!');
+console.log(clips, 'what is in the clips!');
 
   return (
     <div className='media'>
@@ -71,13 +79,14 @@ console.log(artists, 'what is in the artsists!');
             </div>
         </div>
 
+        {/*clips component*/}
         <div className='row'>
             <div className='row-header'>
                 <img src='/images/Clips.svg' alt='Clips'></img>
                 <h1>Clips</h1>
             </div>
             <div className='clips-container'>
-                <p>Content</p>
+                <ClipsGiphySection giphysArray = {clips}></ClipsGiphySection>
             </div>
         </div>       
 
